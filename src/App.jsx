@@ -1,15 +1,23 @@
 import { useState } from 'react'
 
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import LoginPage from './pages/LoginPage'
+import DashbordDoc from './pages/doctor/dashborddoc'
 
 function App() {
  
 
   return (
     <>
-     <div>
-    <h1>Hospital Mangement  System</h1>
-     </div>
+     <BrowserRouter>
+     <Routes>
+
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/doctor-dashboard" element={<DashbordDoc/>} />
+     </Routes>
+     
+     </BrowserRouter>
        
     </>
   )

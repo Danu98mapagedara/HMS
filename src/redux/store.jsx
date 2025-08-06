@@ -5,6 +5,7 @@ const store = configureStore({
     reducer: {
         doctor: doctorReducer
     }
+   
 });
 
 export default store;

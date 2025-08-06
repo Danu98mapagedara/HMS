@@ -21,3 +21,4 @@ export const doctorList = [
     availableSlots: [],
   },
 ];
+export default doctorList;

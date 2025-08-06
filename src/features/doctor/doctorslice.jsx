@@ -31,5 +31,5 @@ logoutdoctor:(state,action)=>{
 });
 
 
-export const { loginDoctor } = doctorslice.actions;
+export const { loginDoctor ,logoutdoctor,updateProfile,updateSlots} = doctorslice.actions;
 export default doctorslice.reducer;
