@@ -8,7 +8,7 @@ function App() {
   return (
     <>
      <div>
-     
+    <h1>Hospital Mangement  System</h1>
      </div>
        
     </>
