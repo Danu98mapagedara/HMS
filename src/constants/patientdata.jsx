@@ -11,7 +11,7 @@ export const patientList = [
     diagnosis: "Angina",
     prescribedMedication: ["Aspirin", "Nitroglycerin"],
     appointmentDate: "2025-08-10",
-    doctorId: 1, // Refers to Dr. John Doe
+    doctorId: 1, 
     medicalHistory: "Diabetes, High Blood Pressure"
   },
   {
@@ -26,7 +26,38 @@ export const patientList = [
     diagnosis: "Eczema",
     prescribedMedication: ["Hydrocortisone Cream"],
     appointmentDate: "2025-08-12",
-    doctorId: 2, // Refers to Dr. Alice Smith
+    doctorId: 2, 
     medicalHistory: "Asthma"
   }
+,
+  {
+    id: 3,
+    name: "Tharindu Silva",
+    age: 28,
+    gender: "Male",
+    email: "tharindu@example.com",
+    phone: "0709876543",
+    address: "Kandy, Sri Lanka",
+    symptoms: ["Headache", "Nausea"],
+    diagnosis: "Migraine",
+    prescribedMedication: ["Sumatriptan"],
+    appointmentDate: "2025-08-13",
+    doctorId: 3,
+    medicalHistory: "None"
+  },
+  {
+    id: 4,
+    name: "Nadeesha Wijesinghe",
+    age: 54,
+    gender: "Female",
+    email: "nadeesha@example.com",
+    phone: "0711122233",
+    address: "Matara, Sri Lanka",
+    symptoms: ["Joint Pain", "Swelling"],
+    diagnosis: "Arthritis",
+    prescribedMedication: ["Ibuprofen", "Methotrexate"],
+    appointmentDate: "2025-08-15",
+    doctorId: 1,
+    medicalHistory: "Hypertension"
+  },
 ];

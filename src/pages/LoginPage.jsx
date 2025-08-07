@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import  Doctorloginpage from'./doctor/logindoc.jsx';
-import  Adminloginpage from './admin/adminlogin.jsx';
-
+import  Admindashbord from './admin/admindashbord.jsx';
 
 const LoginPage = () => {
 
@@ -19,7 +18,7 @@ const LoginPage = () => {
         </>
       )}
         {loginType === 'doctor' && <Doctorloginpage />}
-        {loginType === 'admin' && <Adminloginpage />}
+        {loginType === 'admin' && <Admindashbord/>}
 
 
     </div>

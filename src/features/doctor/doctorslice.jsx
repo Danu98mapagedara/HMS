@@ -4,8 +4,6 @@ import  {createSlice} from '@reduxjs/toolkit'
 const initialState={
     loggedInDoctor:null,
 }
-
-
 const doctorslice = createSlice({
     name: 'doctor',
     initialState,
