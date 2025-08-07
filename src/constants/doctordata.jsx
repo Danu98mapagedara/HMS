@@ -8,7 +8,9 @@ export const doctorList = [
     specialization: "Cardiology",
     email: "john@hospital.com",
     phone: "123456789",
-    availableSlots: ["10:00 AM", "2:00 PM"],
+     location: "Room 101, Main Building",
+    status: "Active",
+   
   },
   {
     id: 2,
@@ -18,7 +20,9 @@ export const doctorList = [
     specialization: "Dermatology",
     email: "alice@hospital.com",
     phone: "987654321",
-    availableSlots: [],
+     location: "Room 101, Main Building",
+    status: "Active",
+  
   },
 ];
 export default doctorList;
