@@ -26,9 +26,7 @@ const PatientSlice=createSlice({
             return state.Patients;
         }
     }
+});
 
-
-
-
-
-})
+export const {addPatient,updatePatient,deletePatient,getPatients} = PatientSlice.actions;
+export default PatientSlice.reducer;
