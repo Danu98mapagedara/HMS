@@ -42,7 +42,7 @@ export const patientList = [
     diagnosis: "Migraine",
     prescribedMedication: ["Sumatriptan"],
     appointmentDate: "2025-08-13",
-    doctorId: 3,
+    doctorId: 1,
     medicalHistory: "None"
   },
   {
