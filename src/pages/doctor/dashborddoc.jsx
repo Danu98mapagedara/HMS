@@ -8,50 +8,101 @@ const DashbordDoc = () => {
   const navigate = useNavigate();
  const[isEditing, setIsEditing] = useState(false);
 
+
+   const doctor = useSelector((state) => state.doctor.loggedInDoctor);
+    console.log("Doctor:", doctor);
+if (!doctor) {
+    return <div>Please log in to view your dashboard.</div>;
+  }
+
+const [formData, setFormData] = useState(doctor || {});
+
   const handleLogout = () => {
     dispatch(logoutdoctor());
     navigate("/login");
   };
 
+ const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({      ...formData,
+      [name]: value
+    });
+  }
+
   const handleUpdateProfile = () => {
+     setFormData(doctor);
     setIsEditing(!isEditing);
   };
 
-    const doctor = useSelector((state) => state.doctor.loggedInDoctor);
-    console.log("Doctor:", doctor);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    dispatch(updateProfile({ [name]: value }));
-  }
-
-  if (!doctor) {
-    return <div>Please log in to view your dashboard.</div>;
-  }
-
-
+  const handleSave = () => {
+    dispatch(updateProfile(formData)); 
+    setIsEditing(false);
+      console.log("Updated Doctor Info:", formData);
+  };
+    
+ 
   return (
    <div style={{ padding: "30px" }}>
-      <input type="text" value={doctor.name} onChange={handleChange} disabled={!isEditing} />
-      <p><strong>Specialization:</strong> </p>
-       <input type="text" value={doctor.specialization} onChange={handleChange} disabled={!isEditing} />
-     
-      <p><strong>Email:</strong> </p>
-       <input type="text" value={doctor.email} onChange={handleChange} disabled={!isEditing}  />
-      
-     
-      <p><strong>Phone:</strong>   </p>
-      <input type="text" value={doctor.phone} onChange={handleChange} disabled={!isEditing} />
+    <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        disabled={!isEditing}
+      />
+<br />
+      <label>Specialization:</label>
+      <input
+        type="text"
+        name="specialization"
+        value={formData.specialization}
+        onChange={handleChange}
+        disabled={!isEditing}
+      />
+<br />
+      <label>Email:</label>
+      <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        disabled={!isEditing}
+      />
+      <br />
+      <label>Phone:</label>
+      <input
+        type="text"
+        name="phone"
+        value={formData.phone}
+        onChange={handleChange}
+        disabled={!isEditing}
+      />
+<br />
+      <label>Address:</label>
+      <input
+        type="text"
+        name="location"
+        value={formData.location || ""}
+        onChange={handleChange}
+        disabled={!isEditing}
+      />
+      <br />
 
-      <p><strong>Address:</strong> </p>
-      <input type="text" value={doctor.location} onChange={handleChange} disabled={!isEditing} />
-      
-      <p><strong>Status:</strong> </p>
-      <input type="text" value={doctor.status} onChange={handleChange} disabled={!isEditing} />
-
-
-
-      <button onClick={()=>{handleUpdateProfile}}>Update  Profile</button>
+      <label>Status:</label>
+      <input
+        type="text"
+        name="status"
+        value={formData.status || ""}
+        onChange={handleChange}
+        disabled={!isEditing}
+      />
+      <br />
+        {isEditing ? (
+        <button onClick={handleSave}>💾 Save</button>
+      ) : (
+        <button onClick={handleUpdateProfile}>✏️ Update Profile</button>
+      )}
     
       <button onClick={handleLogout}>Logout</button>
     </div>
