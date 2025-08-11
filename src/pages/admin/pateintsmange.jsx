@@ -29,8 +29,20 @@ const [showModal, setShowModal] = useState(false);
      const handleDelete=(id)=>{
           dispatch(deletePatient({id}));
         }
+  const handleEdit = (id) => {
+    const patientToEdit = patients.find((p) => p.id === id);
+    if (patientToEdit) {
+      setNewPatient(patientToEdit);
+      setShowModal(true);
+    }
+  };
+  
+const handleUpdate = (id) => {
+    dispatch(updatePatient({ id, ...newPatient }));
+    setNewPatient({ name: '', age: '', gender: '', disease: '', contact: '' });
+    setShowModal(false);
+  };
 
-   
   return (
       <div style={{ padding: '2rem' }}>
       <h2>Patient Management</h2>
@@ -47,9 +59,10 @@ const [showModal, setShowModal] = useState(false);
             <tr key={index}>
               <td>{p.name}</td><td>{p.age}</td><td>{p.gender}</td><td>{p.disease}</td><td>{p.contact}</td>
               <td>
-                     <button onClick={() => handleDelete(p.id)}>Delete</button>
+              <button onClick={() => handleDelete(p.id)}>Delete</button>
+             
                 <button style={{color:"red"}} onClick={() => handleEdit(p.id)}>Edit</button>
-              
+               <button onClick={() => handleUpdate(p.id)}>Update</button>
               </td>
             </tr>
           ))}
