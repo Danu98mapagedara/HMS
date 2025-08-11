@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import  doctordetails, { doctorList } from '../../constants/doctordata'
+import  { doctorList } from '../../constants/doctordata'
 import  {loginDoctor} from '../../features/doctor/doctorslice'
 
 const logindoc = () => {

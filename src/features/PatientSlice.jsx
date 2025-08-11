@@ -20,7 +20,8 @@ const PatientSlice=createSlice({
          }
         },
         deletePatient:(state,action)=>{
-           state.Patients= state.Patients.filter((patient)=>patient.d!==action.payload.id)
+           state.Patients= state.Patients.filter((patient)=>patient.id !== action.payload.id)
+           console.log("Patient deleted:", action.payload.id);
         },
         getPatients:(state,action)=>{
             return state.Patients;
