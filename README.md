@@ -1,12 +1,43 @@
-# React + Vite
+Hospital Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Hospital Management System (HMS) is a web application built to simplify hospital operations by managing patients, doctors, and appointments in one centralized platform.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Doctor Management – Doctors can log in, view, and update their profiles.
 
-## Expanding the ESLint configuration
+Patient Management – Admin can add, update, and delete patient records.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Appointment Management – Schedule and manage doctor-patient appointments.
+
+Admin Dashboard – Provides quick access to patients, doctors, and appointments.
+
+State Management – Handled using Redux Toolkit for smooth data flow.
+
+Data Persistence – Patient and doctor details stored in LocalStorage (can be connected to backend later).
+
+ Tech Stack
+
+Frontend: React.js
+
+State Management: Redux Toolkit
+
+Styling: CSS (with inline styles & reusable components)
+
+Storage: LocalStorage (can be replaced with database)
+
+ How It Works
+
+Admin can manage patients, doctors, and appointments via the dashboard.
+
+Doctors can update their profile information.
+
+Patient details are displayed row by row, with options to edit or delete.
+
+Add Patient functionality uses a modal form to create new patient records.
+
+Data updates are synced with Redux store & persisted to LocalStorage.
+
+ Purpose
+
+This project demonstrates a complete hospital management workflow in a simple and scalable way. It can be extended into a full-fledged HMS by connecting to APIs and databases.
